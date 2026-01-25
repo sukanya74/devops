@@ -12,11 +12,11 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sshagent(['appserver-key']) {
-                    sh '''
-                    scp -o StrictHostKeyChecking=no index.html ubuntu@13.127.131.210:/var/www/html/
-                    '''
-                }
+             sshagent(['appserver-key']) {
+    sh '''
+    scp -o StrictHostKeyChecking=no index.html ubuntu@13.127.131.210:/var/www/html/
+    '''
+}
             }
         }
     }
